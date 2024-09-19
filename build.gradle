@@ -52,3 +52,11 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task commonJar(type: Jar) {
+	archiveBaseName = 'common'
+	from sourceSets.main.output.classesDirs
+	from sourceSets.main.output.resourcesDir
+
+	include 'com/eragapati/modulith/modulith_demo/common/**'
+}
